@@ -27,3 +27,11 @@ Avant de lancer le bot, assure-toi d'avoir :
 - Un **bot Telegram** et son token (à créer via [@BotFather](https://t.me/BotFather)).
 - Une **clé API Birdeye** (gratuite, à récupérer sur [Birdeye](https://birdeye.so/)).
 
+---
+
+### 2. Télécharger le code
+
+**Option A (recommandée)** : Via Git (si tu as Git installé)
+```bash
+git clone https://github.com/OffNorth/MemeCoinFinderByZig.git
+cd MemeCoinFinderByZig
