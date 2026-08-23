@@ -27,11 +27,3 @@ Avant de lancer le bot, assure-toi d'avoir :
 - Un **bot Telegram** et son token (à créer via [@BotFather](https://t.me/BotFather)).
 - Une **clé API Birdeye** (gratuite, à récupérer sur [Birdeye](https://birdeye.so/)).
 
----
-
-## ⚙️ Installation
-
-1. **Clone ton dépôt** (ou télécharge les fichiers) :
-   ```bash
-   git clone https://github.com/TON_PSEUDO/NOM_DU_REPO.git
-   cd NOM_DU_REPO
