@@ -161,6 +161,15 @@ Les tokens Pump.fun et les memecoins peuvent être extrêmement risqués, volati
 
 ---
 
+## 👥 Contact
+
+telegram : zig47
+x : zigxbt
+tiktok : zigxbt
+instagram : zigxbt
+
+---
+
 ## ⭐ Support
 
 Si le projet te plaît, n'hésite pas à laisser une ⭐ au repository GitHub !
