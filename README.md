@@ -29,17 +29,19 @@ Avant de lancer le bot, assure-toi d'avoir :
 
 ---
 
-### 2. Télécharger le code
+### 2. Installation du bot :
 
 Ouvre un terminal (ou l'invite de commandes) et exécute ces **deux commandes** :
 ```bash
 git clone https://github.com/OffNorth/MemeCoinFinderByZig.git
 cd MemeCoinFinderByZig
 ```
+
 Ensuite les dépendances du bot : 
 ```bash
 pip install websockets requests aiohttp python-dotenv rich
 ```
+
 On passe a la création du fichier .env , le fichier ou l'on pose le token du bot telegram, la clé api de birdeye et son chat id telegram.
 ```bash
 nano .env
@@ -48,6 +50,11 @@ nano .env
 TOKEN=ton_token_telegram_ici
 BIRDEYE_API_KEY=ta_cle_birdeye_ici
 CHAT_ID=ton_id_telegram_ici
+```
+
+Ensuite pour le lancer vous n'avez qu'a faire : 
+```bash
+python bot.py
 ```
 
 
