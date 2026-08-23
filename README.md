@@ -73,8 +73,14 @@ Ce fichier permettra de stocker de manière séparée les informations sensibles
 
 Crée le fichier avec :
 
+Pour Termux/Linux :
 ```bash
 nano .env
+```
+
+Pour Windows :
+```bash
+notepad .env
 ```
 
 Puis ajoute les informations suivantes :
