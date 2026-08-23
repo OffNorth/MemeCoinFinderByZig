@@ -1,21 +1,34 @@
 # MemeCoinFinderByZig
-# 🤖 Nino - Scanner de tokens Pump.fun
+# 🤖 Nino — Scanner de tokens Pump.fun
 
-**Nino** est un bot d'analyse crypto en temps réel, conçu pour surveiller les nouveaux tokens lancés sur **Pump.fun** (blockchain Solana). Il croise les données de **Dexscreener** et **Birdeye** pour calculer un score de fiabilité, affiche un tableau de bord en direct dans le terminal et t'envoie des alertes détaillées sur Telegram quand une pépite potentielle est détectée.
+**Nino** est un bot d'analyse crypto en temps réel conçu pour surveiller les nouveaux tokens lancés sur **Pump.fun** (blockchain Solana). 🪙
+
+Il croise les données de **Dexscreener** et **Birdeye** afin de calculer un score de fiabilité, affiche un tableau de bord en direct dans le terminal et envoie des alertes détaillées sur Telegram lorsqu'une potentielle pépite est détectée. 🚀
 
 ---
 
 ## ✨ Fonctionnalités
 
-- 📡 **Écoute en temps réel** : Connexion WebSocket à Pump.fun pour capturer les nouveaux tokens dès leur création.
-- 📊 **Double analyse** :
-  - **Dexscreener** : Market Cap, Volume 24h, Variation 5m → Score sur 4.
-  - **Birdeye** : Liquidité, Nombre de détenteurs, Momentum du prix → Score sur 5 (vérification secondaire).
-- 🖥️ **Dashboard dynamique** : Interface colorée dans le terminal (avec la bibliothèque `rich`) qui se met à jour en direct.
-- 📨 **Alertes Telegram intelligentes** :
-  - Envoi automatique uniquement si le token obtient un score **≥ 3/4** sur Dexscreener.
-  - Message détaillé contenant les chiffres clés, les liens vers Dexscreener/Pump.fun et un avis personnalisé.
-- ⏰ **Statut périodique** : Le bot t'envoie un message de "battement de cœur" sur Telegram toutes les 3 heures pour confirmer qu'il est actif.
+* 📡 **Écoute en temps réel**
+  Connexion WebSocket à Pump.fun pour capturer les nouveaux tokens dès leur création.
+
+* 📊 **Double analyse**
+
+  * 🔵 **Dexscreener** : Market Cap, Volume 24h et variation sur 5 min → **Score sur 4**
+  * 🟣 **Birdeye** : Liquidité, nombre de détenteurs et momentum du prix → **Score sur 5** (vérification secondaire)
+
+* 🖥️ **Dashboard dynamique**
+  Interface colorée dans le terminal grâce à la bibliothèque `rich`, avec une mise à jour en direct des tokens détectés.
+
+* 📨 **Alertes Telegram intelligentes**
+
+  * 🚨 Envoi automatique uniquement lorsqu'un token obtient un score **≥ 3/4 sur Dexscreener**.
+  * 📈 Message détaillé contenant les chiffres clés.
+  * 🔗 Liens directs vers **Dexscreener** et **Pump.fun**.
+  * 💡 Avis personnalisé basé sur les données analysées.
+
+* ⏰ **Statut périodique**
+  Le bot envoie un message de « battement de cœur » sur Telegram toutes les **3 heures** afin de confirmer qu'il est toujours actif. ❤️
 
 ---
 
@@ -23,42 +36,128 @@
 
 Avant de lancer le bot, assure-toi d'avoir :
 
-- **Python 3.10** ou supérieur installé sur ta machine.
-- Un **bot Telegram** et son token (à créer via [@BotFather](https://t.me/BotFather)).
-- Une **clé API Birdeye** (gratuite, à récupérer sur [Birdeye](https://birdeye.so/)).
+* 🐍 **Python 3.10** ou supérieur installé sur ta machine.
+* 🤖 Un **bot Telegram** et son token, à créer via [@BotFather](https://t.me/BotFather).
+* 🔑 Une **clé API Birdeye** (gratuite), disponible sur [Birdeye](https://birdeye.so/).
+* 💻 Un terminal pour installer et lancer le bot.
 
 ---
 
-### 2. Installation du bot :
+## 📥 Installation
 
-Ouvre un terminal (ou l'invite de commandes) et exécute ces **deux commandes** :
+### 1. Cloner le projet
+
+Ouvre un terminal et exécute les commandes suivantes :
+
 ```bash
 git clone https://github.com/OffNorth/MemeCoinFinderByZig.git
 cd MemeCoinFinderByZig
 ```
 
-Ensuite les dépendances du bot : 
+### 2. Installer les dépendances
+
+Installe ensuite les différentes dépendances nécessaires au fonctionnement du bot :
+
 ```bash
 pip install websockets requests aiohttp python-dotenv rich
 ```
 
-On passe a la création du fichier .env , le fichier ou l'on pose le token du bot telegram, la clé api de birdeye et son chat id telegram.
+---
+
+## 🔐 Configuration
+
+Il faut maintenant créer un fichier `.env`.
+Ce fichier permettra de stocker de manière séparée les informations sensibles du bot : **token Telegram**, **clé API Birdeye** et **Chat ID Telegram**.
+
+Crée le fichier avec :
+
 ```bash
 nano .env
 ```
-```bash
+
+Puis ajoute les informations suivantes :
+
+```env
 TOKEN=ton_token_telegram_ici
 BIRDEYE_API_KEY=ta_cle_birdeye_ici
 CHAT_ID=ton_id_telegram_ici
 ```
 
-Ensuite pour le lancer vous n'avez qu'a faire : 
+> ⚠️ **Important :** ne partage jamais ton fichier `.env` publiquement et ne publie jamais tes clés API ou ton token Telegram sur GitHub.
+
+💡 Il est également recommandé d'ajouter `.env` à ton fichier `.gitignore` :
+
+```gitignore
+.env
+```
+
+---
+
+## 🚀 Lancer le bot
+
+Une fois la configuration terminée, il ne reste plus qu'à lancer Nino :
+
 ```bash
 python bot.py
 ```
 
+Si tout est correctement configuré, le bot commencera à surveiller les nouveaux tokens Pump.fun en temps réel. 📡🔥
 
+---
 
+## 📊 Fonctionnement du scoring
+
+Nino utilise plusieurs indicateurs afin d'évaluer les tokens détectés :
+
+| Source         | Indicateurs                          |  Score |
+| -------------- | ------------------------------------ | -----: |
+| 🔵 Dexscreener | Market Cap, Volume 24h, Variation 5m | **/4** |
+| 🟣 Birdeye     | Liquidité, Holders, Momentum         | **/5** |
+
+🚨 Une alerte Telegram est envoyée lorsque le token atteint au minimum **3/4 sur Dexscreener**.
+
+> ⚠️ **Attention :** le score est uniquement un indicateur automatisé et ne garantit en aucun cas qu'un token est fiable ou rentable. Les memecoins sont extrêmement volatils et comportent des risques importants.
+
+---
+
+## 💬 Telegram
+
+Lorsqu'un token intéressant est détecté, Nino envoie automatiquement une alerte contenant notamment :
+
+* 🪙 Nom et symbole du token
+* 📊 Score Dexscreener
+* 💰 Market Cap
+* 📈 Volume
+* 📉 Variation du prix
+* 💧 Liquidité
+* 👥 Nombre de holders
+* ⚡ Momentum
+* 🔗 Liens vers Dexscreener et Pump.fun
+* 💡 Analyse et avis du bot
+
+---
+
+## ❤️ Statut du bot
+
+Toutes les **3 heures**, Nino envoie automatiquement un message de statut sur Telegram afin de confirmer que le scanner fonctionne toujours correctement. 🤖💚
+
+---
+
+## ⚠️ Disclaimer
+
+Nino est un **outil d'analyse et de surveillance**. Il ne constitue pas un conseil financier et ne garantit aucun rendement.
+
+Les tokens Pump.fun et les memecoins peuvent être extrêmement risqués, volatils et sujets aux **rug pulls, scams et manipulations de marché**.
+
+**Utilise ce bot à tes propres risques et fais toujours tes propres recherches (DYOR).** 🔎
+
+---
+
+## ⭐ Support
+
+Si le projet te plaît, n'hésite pas à laisser une ⭐ au repository GitHub !
+
+**Made with ❤️ for the Solana community.** 🟣🚀
 
 
 
