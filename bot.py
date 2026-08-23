@@ -15,7 +15,7 @@ load_dotenv()
 
 # ==================== CONFIGURATION ====================
 BOT_TOKEN = os.getenv("TOKEN")
-CHAT_ID = "1234"
+CHAT_ID = os.getenv("CHAT_ID")
 BIRDEYE_API_KEY = os.getenv("BIRDEYE_API_KEY", "TA_CLE_API_ICI")
 
 console = Console()
