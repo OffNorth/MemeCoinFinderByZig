@@ -5,6 +5,8 @@
 
 Il croise les données de **Dexscreener** et **Birdeye** afin de calculer un score de fiabilité, affiche un tableau de bord en direct dans le terminal et envoie des alertes détaillées sur Telegram lorsqu'une potentielle pépite est détectée. 🚀
 
+Work on Linux Termux Windows
+
 ---
 
 ## ✨ Fonctionnalités
