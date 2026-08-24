@@ -105,9 +105,18 @@ CHAT_ID=ton_id_telegram_ici
 
 Une fois la configuration terminée, il ne reste plus qu'à lancer Nino :
 
+Pour les francophones :
+
 ```bash
 python bot.py
 ```
+
+Pour les non-francophones : 
+
+```bash
+python botworld.py
+```
+
 
 Si tout est correctement configuré, le bot commencera à surveiller les nouveaux tokens Pump.fun en temps réel. 📡🔥
 
