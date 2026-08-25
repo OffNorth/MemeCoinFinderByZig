@@ -235,7 +235,6 @@ async def traiter_token(mint, nom, symbole):
     if dex_score and dex_score['score'] >= 3:
         console.print(f"[green]📨 {symbole} → envoi Telegram (score {dex_score['score']}/4)[/green]")
         alert = ""
-        alert += f"Hé toi, écoute-moi bien. 👀\n"
         alert += f"Je viens de tomber sur un token qui mérite qu'on s'y attarde.\n\n"
         alert += f"🎯 **Nom** : {nom} (${symbole})\n"
         alert += f"🔗 [Dexscreener](https://dexscreener.com/solana/{mint})\n"
