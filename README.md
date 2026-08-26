@@ -14,7 +14,6 @@ Fonctionne sur Linux, Windows et Termux (Android).
 - ⏰ Message de statut Telegram toutes les 3h
 - 🌍 Alertes en français ou en anglais (`LANG=fr` ou `LANG=en` dans `.env`)
 
-> Un seul fichier `bot.py` gère les deux langues — plus besoin de deux scripts séparés.
 
 ## 🛠️ Prérequis
 
